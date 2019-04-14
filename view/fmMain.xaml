@@ -1,0 +1,46 @@
+﻿<Window x:Class="view.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ts="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
+        Title="Código de barra" Height="180" Width="133" WindowStyle="ToolWindow" VerticalContentAlignment="Center" MinWidth="133" MaxWidth="133" MaxHeight="180" MinHeight="180"
+        WindowStartupLocation="Manual" Top="0" Left="0">
+    <Grid Margin="0">
+        <Button Name="btTestar" Margin="8,259,23,-152" Content="testar" Click="btTestar_Click" Visibility="Hidden"/>
+        <ListView Name="lvLista" HorizontalAlignment="Left" Height="182" Margin="10,10,0,-12" VerticalAlignment="Top" Width="84" Visibility="Hidden" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="39,210,-34,-53" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Visibility="Hidden" Grid.ColumnSpan="2"/>
+        <Image Name="imQrcode" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="10,10,0,0" RenderTransformOrigin="0.501,0.519" Grid.ColumnSpan="2"/>
+        <Image  Name="imBusy" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="105" Margin="10,10,0,0" RenderTransformOrigin="0.501,0.519" Source="image/busy.png" OpacityMask="White" Visibility="Hidden"/>
+        <ts:HorizontalToggleSwitch x:Name="tglVenda" Margin="22,116,23,0" Width="80" CheckedContent="" UncheckedContent="" BorderThickness="1" Height="28" RenderTransformOrigin="0.5,0.5" UncheckedForeground="{x:Null}" ThumbSize="36" ThumbBrush="{x:Null}" >
+            <ts:HorizontalToggleSwitch.CheckedBackground>
+                <ImageBrush ImageSource="image/barcode.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform X="-0.15"/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </ts:HorizontalToggleSwitch.CheckedBackground>
+            <ts:HorizontalToggleSwitch.UncheckedBackground>
+                <ImageBrush ImageSource="image/cart.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform X="0.15"/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </ts:HorizontalToggleSwitch.UncheckedBackground>
+        </ts:HorizontalToggleSwitch>
+    </Grid>
+</Window>
